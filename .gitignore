@@ -1,0 +1,48 @@
+# Android Studio / Gradle
+.gradle/
+build/
+.idea/
+*.iml
+local.properties
+gradle.properties
+
+# Claude/AI assistant files
+.claude/
+*.aab
+
+# Generated files
+.DS_Store
+.externalNativeBuild/
+.cxx/
+*.log
+
+# Kotlin
+*.class
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Signing
+*.jks
+*.keystore
+keystore.properties
+
+# IDE
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+Desktop.ini
+.Spotlight-V100
+.Trashes
+
+# Project specific
+PROJECT_SUMMARY.md
+nul
