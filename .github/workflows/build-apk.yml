@@ -18,6 +18,7 @@ jobs:
 
       - name: Pin Gradle wrapper to 8.7
         run: |
+          mkdir -p gradle/wrapper
           cat > gradle/wrapper/gradle-wrapper.properties << 'EOF'
           distributionBase=GRADLE_USER_HOME
           distributionPath=wrapper/dists
@@ -25,6 +26,11 @@ jobs:
           zipStoreBase=GRADLE_USER_HOME
           zipStorePath=wrapper/dists
           EOF
+
+      - name: Download Gradle wrapper jar
+        run: |
+          curl -L --output gradle/wrapper/gradle-wrapper.jar \
+            "https://github.com/gradle/gradle/raw/v8.7.0/gradle/wrapper/gradle-wrapper.jar"
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
