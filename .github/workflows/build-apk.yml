@@ -25,8 +25,8 @@ jobs:
       run: chmod +x gradlew
 
     - name: Fix missing Gradle Wrapper
-      # This forces the GitHub server to recreate the missing .jar file
-      run: gradle wrapper
+      # Forcing version 8.7 prevents Gradle 9 from breaking older plugins
+      run: gradle wrapper --gradle-version 8.7
 
     - name: Build Debug APK
       run: ./gradlew assembleDebug
