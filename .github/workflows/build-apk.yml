@@ -1,7 +1,11 @@
 name: Build Android APK
 
 on:
-  workflow_dispatch: # This allows you to trigger the build manually
+  workflow_dispatch:
+
+# Add the environment variable here to force Node 24
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   build:
@@ -22,8 +26,6 @@ jobs:
       run: chmod +x gradlew
 
     - name: Build Debug APK
-      # We build the Debug APK because Release APKs require keystore signing 
-      # before Android will let you install them.
       run: ./gradlew assembleDebug
 
     - name: Upload APK Artifact
